@@ -5,7 +5,9 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     [SerializeField]
-    float range = 5;
+    float range = 1;
+    float buffer = 20;
+    int maxEnemies = 50;
 
     [SerializeField]
     private GameObject enemyObj;
@@ -15,12 +17,14 @@ public class EnemySpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Spawn", 0, 2);
+        InvokeRepeating("Spawn", 0, 0.2f);
     }
 
     // Update is called once per frame
     void Spawn()
     {
-        Instantiate(enemyObj, transform.position + new Vector3(Random.Range(-range, range), Random.Range(-range, range), 0.0f), transform.rotation, container);
+        Debug.Log(container.childCount);
+        if (container.childCount < maxEnemies)
+            Instantiate(enemyObj, transform.position + new Vector3(Random.Range(-range, range) * buffer, Random.Range(-range, range) * buffer, 0.0f), transform.rotation, container);
     }
 }

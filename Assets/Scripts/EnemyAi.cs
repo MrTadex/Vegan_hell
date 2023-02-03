@@ -31,7 +31,6 @@ public class EnemyAi : MonoBehaviour
     {
         /*Debug.Log("Player Position: X = " + playerObj.transform.position.x + " --- Y = " + playerObj.transform.position.y + " --- Z = " + 
         playerObj.transform.position.z);*/
-        Debug.Log(body.velocity);
 
         if(playerObj.transform.position.x > transform.position.x)
         {
