@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 1229627324}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
-  enemyObj: {fileID: 2220663237082898797, guid: c06fed0275350d44ba47e3463e1fdd2c, type: 3}
+  enemyObj: {fileID: 7871210757275099170, guid: 7cd995c3387cc3345a858c32a127b2da, type: 3}
   container: {fileID: 2114667527}
 --- !u!1 &1429192576
 GameObject:

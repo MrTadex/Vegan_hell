@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyAi : MonoBehaviour
 {
     Rigidbody2D body;
+    SpriteRenderer sp;
 
     float horizontal;
     float vertical;
@@ -19,6 +20,7 @@ public class EnemyAi : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        sp= GetComponent<SpriteRenderer>();
 
         // find player by script
         if (playerObj == null)
@@ -27,8 +29,18 @@ public class EnemyAi : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log("Player Position: X = " + playerObj.transform.position.x + " --- Y = " + playerObj.transform.position.y + " --- Z = " + 
-        playerObj.transform.position.z);
+        /*Debug.Log("Player Position: X = " + playerObj.transform.position.x + " --- Y = " + playerObj.transform.position.y + " --- Z = " + 
+        playerObj.transform.position.z);*/
+        Debug.Log(body.velocity);
+
+        if(playerObj.transform.position.x > transform.position.x)
+        {
+            sp.flipX= true;
+        }
+        else
+        {
+            sp.flipX = false;
+        }
 
         if (chase)
             transform.position = Vector3.MoveTowards(transform.position, playerObj.transform.position, runSpeed * Time.fixedDeltaTime);
