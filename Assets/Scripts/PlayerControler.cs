@@ -9,7 +9,8 @@ public class PlayerControler : MonoBehaviour
     float horizontal;
     float vertical;
 
-    public float runSpeed = 20.0f;
+    [SerializeField]
+    public float runSpeed = 5.0f;
 
     void Start()
     {
@@ -24,6 +25,6 @@ public class PlayerControler : MonoBehaviour
 
     private void FixedUpdate()
     {
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+        body.velocity = new Vector2(horizontal * runSpeed * Time.fixedDeltaTime, vertical * runSpeed * Time.fixedDeltaTime);
     }
 }
