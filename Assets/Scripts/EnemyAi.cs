@@ -9,8 +9,9 @@ public class EnemyAi : MonoBehaviour
     float horizontal;
     float vertical;
 
-    [SerializeField]
-    private GameObject playerObj = null;
+    bool chase = true;
+
+    private GameObject playerObj;
 
     [SerializeField]
     public float runSpeed = 5.0f;
@@ -24,16 +25,21 @@ public class EnemyAi : MonoBehaviour
             playerObj = FindObjectOfType<PlayerControler>().gameObject;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Debug.Log("Player Position: X = " + playerObj.transform.position.x + " --- Y = " + playerObj.transform.position.y + " --- Z = " + 
         playerObj.transform.position.z);
 
-        // go to player
+        if (chase)
+            transform.position = Vector3.MoveTowards(transform.position, playerObj.transform.position, runSpeed * Time.fixedDeltaTime);
     }
 
-    private void FixedUpdate()
+    //Just hit another collider 2D
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        body.velocity = new Vector2(horizontal * runSpeed * Time.fixedDeltaTime, vertical * runSpeed * Time.fixedDeltaTime);
+        if (collision.gameObject.tag == "Player") {
+            chase = false;
+            Destroy(gameObject);
+        }
     }
 }
