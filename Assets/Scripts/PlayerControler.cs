@@ -14,11 +14,15 @@ public class PlayerControler : MonoBehaviour
     [SerializeField]
     public float runSpeed = 5.0f;
 
+    //player sound
+    AudioSource audioSrc;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSrc = GetComponent<AudioSource> ();
     }
 
     void Update()
@@ -28,11 +32,14 @@ public class PlayerControler : MonoBehaviour
 
         if(body.velocity != Vector2.zero)
         {
+            if (!audioSrc.isPlaying)
+                audioSrc.Play ();
             animator.SetBool("Walk",true);
         }
         else
         {
             animator.SetBool("Walk", false);
+            audioSrc.Stop ();
         }
 
         if(body.velocity.x > 0)

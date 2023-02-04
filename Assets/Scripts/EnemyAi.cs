@@ -15,6 +15,7 @@ public class EnemyAi : MonoBehaviour
     [SerializeField]
     public float runSpeed = 5.0f;
 
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -65,6 +66,7 @@ public class EnemyAi : MonoBehaviour
         {
             chase = false;
             gameManager.Health--;
+            // audioSrc.PlayOneShot ("Bullet_shoot");
         }
 
         if (collision.gameObject.tag == "Mele")

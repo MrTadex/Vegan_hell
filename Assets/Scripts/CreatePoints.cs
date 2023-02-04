@@ -39,6 +39,7 @@ public class CreatePoints : MonoBehaviour
 
     float OneStep;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -94,6 +95,7 @@ public class CreatePoints : MonoBehaviour
             foreach (Transform point in transform)
             {
                 point.GetComponent<Animator>().SetTrigger("Shoot");
+                SoundManager.PlaySound("Bullet_shoot");
             }
 
             canFire = false;
