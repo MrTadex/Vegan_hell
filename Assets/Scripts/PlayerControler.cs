@@ -16,6 +16,8 @@ public class PlayerControler : MonoBehaviour
 
     int maxEnemyKills;
 
+    AudioSource audioSrc;
+
     public void GameOver () {
         //GameOverScreen.Setup(maxEnemyKills);
     }
@@ -25,6 +27,8 @@ public class PlayerControler : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
+
+        audioSrc = GetComponent<AudioSource> ();
 
         maxEnemyKills = FindObjectOfType<GameManager>().maxEnemyKills;
     }
@@ -36,11 +40,14 @@ public class PlayerControler : MonoBehaviour
 
         if(body.velocity != Vector2.zero)
         {
+            if (!audioSrc.isPlaying)
+                audioSrc.Play ();
             animator.SetBool("Walk",true);
         }
         else
         {
             animator.SetBool("Walk", false);
+            audioSrc.Stop ();
         }
 
         if(body.velocity.x > 0)
