@@ -6,7 +6,7 @@ public class PlayerControler : MonoBehaviour
 {
     Rigidbody2D body;
     Animator animator;
-    SpriteRenderer renderer;
+    SpriteRenderer spriteRenderer;
 
     float horizontal;
     float vertical;
@@ -14,23 +14,14 @@ public class PlayerControler : MonoBehaviour
     [SerializeField]
     public float runSpeed = 5.0f;
 
-    int maxEnemyKills;
-
     AudioSource audioSrc;
-
-    public void GameOver () {
-        //GameOverScreen.Setup(maxEnemyKills);
-    }
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        renderer = GetComponent<SpriteRenderer>();
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
         audioSrc = GetComponent<AudioSource> ();
-
-        maxEnemyKills = FindObjectOfType<GameManager>().maxEnemyKills;
     }
 
     void Update()
@@ -52,11 +43,11 @@ public class PlayerControler : MonoBehaviour
 
         if(body.velocity.x > 0)
         {
-            renderer.flipX= true;
+            spriteRenderer.flipX= true;
         }
         else if (body.velocity.x < 0)
         {
-            renderer.flipX = false;
+            spriteRenderer.flipX = false;
         }
     }
 

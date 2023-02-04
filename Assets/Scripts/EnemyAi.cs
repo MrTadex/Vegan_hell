@@ -6,9 +6,7 @@ public class EnemyAi : MonoBehaviour
 {
     Rigidbody2D body;
     SpriteRenderer sp;
-
-    float horizontal;
-    float vertical;
+    GameManagement gameManager;
 
     bool chase = true;
 
@@ -22,6 +20,8 @@ public class EnemyAi : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         sp= GetComponent<SpriteRenderer>();
 
+        gameManager = FindObjectOfType<GameManagement>();
+
         // find player by script
         if (playerObj == null)
             playerObj = FindObjectOfType<PlayerControler>().gameObject;
@@ -29,8 +29,6 @@ public class EnemyAi : MonoBehaviour
 
     void FixedUpdate()
     {
-        /*Debug.Log("Player Position: X = " + playerObj.transform.position.x + " --- Y = " + playerObj.transform.position.y + " --- Z = " + 
-        playerObj.transform.position.z);*/
 
         if(playerObj.transform.position.x > transform.position.x)
         {
@@ -60,12 +58,13 @@ public class EnemyAi : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
-            // maxEnemyKills++;
+            gameManager.maxEnemyKills++;
         }
 
         if (collision.gameObject.tag == "Player")
         {
             chase = false;
+            gameManager.Health--;
         }
     }
 }

@@ -9,20 +9,37 @@ public enum GameState {
     PauseGame
 }
 
-public class GameManager : MonoBehaviour
+public class GameManagement : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static GameManagement Instance { get; private set; }
     public GameState State;
 
+    public static event Action<GameState> OnGameStateChanged;
+
     [SerializeField]
-    public GameOverScreen GameOverScreen;
+    public GameOverScreen gameOverScreen;
     public int maxEnemyKills = 0;
 
-    public int Score = 0;
-    public int Health = 3;
+    public float Clock = 0;
+    public int Health = 6;
 
     void Awake() {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        UpdateGameState(GameState.PlayGame);
+    }
+
+    private void Update()
+    {
+        Clock *= Time.deltaTime;
+
+        if(Health < 1)
+        {
+            UpdateGameState(GameState.GameOver);
+        }
     }
 
     public void UpdateGameState(GameState newState) {
@@ -34,20 +51,16 @@ public class GameManager : MonoBehaviour
             case GameState.PauseGame:
                 break;
             case GameState.GameOver:
+                GameOver();
                 break;
-            default: 
-                break;
-                
         }
+
+        OnGameStateChanged?.Invoke(newState);
     }
 
-    public void PlayerTakeDamage (float amount)
+    public void GameOver()
     {
-
-    }
-
-    public void EnemyTakeDamage (float amount)
-    {
-
+        gameOverScreen.Setup(maxEnemyKills);
+        gameOverScreen.enabled = true;
     }
 }
