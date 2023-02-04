@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using TMPro;
+using UnityEngine.UI;
 
 public enum GameState {
     GameOver,
@@ -22,6 +23,12 @@ public class GameManagement : MonoBehaviour
 
     [SerializeField]
     public TextMeshProUGUI pointsText;
+
+    [SerializeField]
+    public Image image;
+
+    [SerializeField]
+    List<Sprite> sprites = new List<Sprite>();
 
     public int maxEnemyKills = 0;
     public float Clock = 0;
@@ -43,6 +50,8 @@ public class GameManagement : MonoBehaviour
 
         string v = Clock.ToString("F0");
         pointsText.text = v;
+
+        image.sprite = sprites[Health];
 
         if (Health < 1)
         {

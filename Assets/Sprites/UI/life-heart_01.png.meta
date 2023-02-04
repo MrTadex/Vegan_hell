@@ -242,6 +242,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: life-heart_01_6
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 0
+        width: 51
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f2c5817aac7584898b28e9f43dab23
+      internalID: 623947720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -255,6 +276,7 @@ TextureImporter:
     nameFileIdTable:
       life-heart_01_2: 1785345001
       life-heart_01_3: -878819363
+      life-heart_01_6: 623947720
       life-heart_01_4: -752090306
       life-heart_01_5: -783802593
       life-heart_01_0: -1586517764
