@@ -27,11 +27,11 @@ public class PlayerMele: MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Vector2 Direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        Vector2 Direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - Camera.main.transform.position).normalized;
         float angle = Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg;
 
         Debug.Log(Direction);
-        mark.transform.position = new Vector3(Direction.x, Direction.y, -1) + transform.position;
+        mark.transform.position = (new Vector3(Direction.x, Direction.y, -1) * 1.35f) + transform.position;
 
         if (Input.GetMouseButtonDown(0))
         {
