@@ -19,18 +19,7 @@ public class MenuManager : MonoBehaviour
 
     private void GameManagement_OnGameStateChanged(GameState obj)
     {
-        Debug.Log("HA" + obj.ToString());
-
-        switch (obj) {
-            case GameState.PlayGame:
-                _gameOverOverlayPauseGame.SetActive(false);
-                break;
-            case GameState.PauseGame:
-                _gameOverOverlayPauseGame.SetActive(true);
-                break;
-            case GameState.GameOver:
-                _gameOverOverlayGameOver.SetActive(obj == GameState.GameOver);
-                break;
-        }
+        _gameOverOverlayGameOver.SetActive(obj == GameState.GameOver);
+        _gameOverOverlayPauseGame.SetActive(obj == GameState.PauseGame);
     }
 }

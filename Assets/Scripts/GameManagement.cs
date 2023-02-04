@@ -18,9 +18,7 @@ public class GameManagement : MonoBehaviour
     public static event Action<GameState> OnGameStateChanged;
 
     [SerializeField]
-    public GameOverScreen gameOverScreen;
-    // [SerializeField]
-    // public GameOverScreen pauseScreen;
+    public TextMeshProUGUI KilledEnemies;
 
     [SerializeField]
     public TextMeshProUGUI pointsText;
@@ -40,8 +38,12 @@ public class GameManagement : MonoBehaviour
 
     private void Update()
     {
-        Clock += Time.deltaTime;
-        pointsText.text = Clock.ToString("F0");
+        if(Time.deltaTime != 0)
+            Clock += Time.deltaTime;
+
+        string v = Clock.ToString("F0");
+        pointsText.text = v;
+
         if (Health < 1)
         {
             UpdateGameState(GameState.GameOver);
@@ -49,14 +51,13 @@ public class GameManagement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log(State.ToString());
-            if (State.ToString() == "PlayGame") {
+            if (State == GameState.PlayGame) {
                 Time.timeScale = 0f;
                 AudioListener.pause = true;
                 UpdateGameState(GameState.PauseGame);
                 Debug.Log("Paused");
             } else {
-                Time.timeScale = 1;
+                Time.timeScale = 1f;
                 AudioListener.pause = false;
                 UpdateGameState(GameState.PlayGame);
                 Debug.Log("UnPaused");
@@ -72,14 +73,10 @@ public class GameManagement : MonoBehaviour
 
         switch (newState) {
             case GameState.PlayGame:
-                // Health = 6;
-                // Clock = 0;
-                // maxEnemyKills = 0;
                 break;
             case GameState.PauseGame:
                 break;
             case GameState.GameOver:
-                Time.timeScale = 0f;
                 GameOver();
                 break;
         }
@@ -89,6 +86,7 @@ public class GameManagement : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverScreen.Setup(maxEnemyKills);
+        Time.timeScale = 0f;
+        KilledEnemies.text = maxEnemyKills.ToString() + " Kills";
     }
 }
