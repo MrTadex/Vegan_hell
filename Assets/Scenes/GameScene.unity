@@ -275,7 +275,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   State: 1
   gameOverScreen: {fileID: 1788496797}
-  pauseScreen: {fileID: 818235317}
   maxEnemyKills: 0
   Clock: 0
   Health: 6
@@ -808,7 +807,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   State: 2
   gameOverScreen: {fileID: 0}
-  pauseScreen: {fileID: 0}
   maxEnemyKills: 0
   Clock: 0
   Health: 6
@@ -2056,7 +2054,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   State: 0
   gameOverScreen: {fileID: 0}
-  pauseScreen: {fileID: 0}
   maxEnemyKills: 0
   Clock: 0
   Health: 6

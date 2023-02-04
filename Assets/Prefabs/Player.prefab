@@ -277,6 +277,7 @@ MonoBehaviour:
   Vegans:
   - {fileID: 7871210757275099170, guid: 7cd995c3387cc3345a858c32a127b2da, type: 3}
   - {fileID: 7871210757275099170, guid: 132cc2a9e8a61ea42a2cf66daad84627, type: 3}
+  - {fileID: 7871210757275099170, guid: 11c818577f46a0042ac06524af20a480, type: 3}
   container: {fileID: 0}
 --- !u!114 &2430272778323021119
 MonoBehaviour:
