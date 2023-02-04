@@ -46,13 +46,13 @@ public class EnemyAi : MonoBehaviour
     }
 
     //Just hit another collider 2D
-    private void OnCollisionEnter2D(Collision2D collision)
+   /* private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player") {
             chase = false;
             Destroy(gameObject);
         }
-    }
+    }*/
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -60,6 +60,11 @@ public class EnemyAi : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            chase = false;
         }
     }
 }

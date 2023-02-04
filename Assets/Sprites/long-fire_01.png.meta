@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8bf621fdfa0e72241a62160194d72280
+guid: 9fe67615cc862e14191ee6ac2cba4282
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vegan_run1_0
+      name: long-fire_01_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 58
+        width: 74
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76371c3bf8822524dab021158b146d8a
-      internalID: -363018419
+      spriteID: ab840a87c714ca64fa4acd70d8258bd2
+      internalID: -991220152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vegan_run1_1
+      name: long-fire_01_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 74
         y: 0
-        width: 64
-        height: 58
+        width: 74
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daaf4a322b9d91148b88048b94ea3b31
-      internalID: -1497409774
+      spriteID: 0687e9aced07f10499628ecdf8f0e701
+      internalID: 213304764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vegan_run1_2
+      name: long-fire_01_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 148
         y: 0
-        width: 64
-        height: 58
+        width: 74
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a211eb7dc6eccb249ae5c3c3fff96eef
-      internalID: -1269371220
+      spriteID: f0f7e0ca6c05a8a48a06fc91599d9952
+      internalID: 1062645952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vegan_run1_3
+      name: long-fire_01_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 222
         y: 0
-        width: 64
-        height: 58
+        width: 74
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,92 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80a4c0126cdf99341be8a0a3fb844513
-      internalID: -300873468
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vegan_run1_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84c02f98f0e2ce54aa300605268e794e
-      internalID: 1033352703
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vegan_run1_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f90d94997c824884b8264fd2a8b7e22e
-      internalID: 1352616073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vegan_run1_6
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d5c4aeb2ac4ae4a4b847a2b1a1286c03
-      internalID: -17117002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vegan_run1_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72bae73a5be04ca4db29f2fce19c53f9
-      internalID: 982306257
+      spriteID: e441430db62189d4fa9dca75a0a8af65
+      internalID: -44969516
       vertices: []
       indices: 
       edges: []
@@ -283,14 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      vegan_run1_3: -300873468
-      vegan_run1_5: 1352616073
-      vegan_run1_1: -1497409774
-      vegan_run1_0: -363018419
-      vegan_run1_7: 982306257
-      vegan_run1_6: -17117002
-      vegan_run1_2: -1269371220
-      vegan_run1_4: 1033352703
+      long-fire_01_2: 1062645952
+      long-fire_01_1: 213304764
+      long-fire_01_3: -44969516
+      long-fire_01_0: -991220152
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

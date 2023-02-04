@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5b7188cff74f4fd4e8c691c6ec962d36
+guid: f90544e7f4fd08a409ece4ba89acc67b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,106 +105,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vega_test_0
+      name: SAD_POTATO_MAN_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 228
+        width: 96
         height: 128
-      alignment: 9
-      pivot: {x: 0.4, y: 0.49999997}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 651eb70735cf9494e97301801c92a5e3
-      internalID: 746708234
+      spriteID: fbf4ba3f9af79d7439f122867af31c5b
+      internalID: 1835504234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vega_test_1
+      name: SAD_POTATO_MAN_1
       rect:
         serializedVersion: 2
-        x: 228
+        x: 96
         y: 0
-        width: 228
+        width: 96
         height: 128
-      alignment: 9
-      pivot: {x: 0.4, y: 0.49999997}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de8a6f37b217b9847bce88c3b03f0a1a
-      internalID: 739952802
+      spriteID: 3bb4651ed56a40944ab68fa7ceefd97e
+      internalID: -2051702206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vega_test_2
+      name: SAD_POTATO_MAN_2
       rect:
         serializedVersion: 2
-        x: 456
+        x: 192
         y: 0
-        width: 228
+        width: 96
         height: 128
-      alignment: 9
-      pivot: {x: 0.4, y: 0.49999997}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 611a86df85cb3c542933a236fc2467b1
-      internalID: 232004003
+      spriteID: d7d83f1634d6831468f5e7600248a437
+      internalID: 1829413988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vega_test_3
+      name: SAD_POTATO_MAN_3
       rect:
         serializedVersion: 2
-        x: 684
+        x: 288
         y: 0
-        width: 228
+        width: 96
         height: 128
-      alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8eeaf5953e188744ba123d89d3795c4
-      internalID: -1067740428
+      spriteID: 37c1867bef0419b429e3ff6c76802352
+      internalID: -1973021892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vega_test_4
+      name: SAD_POTATO_MAN_4
       rect:
         serializedVersion: 2
-        x: 912
+        x: 384
         y: 0
-        width: 228
+        width: 96
         height: 128
-      alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 526f52b721d4ef147942e12606091c9c
-      internalID: 1721235872
+      spriteID: 92e3a0660c6d30741b256d1c4c308239
+      internalID: 1961443108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAD_POTATO_MAN_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479a38831e039ae4084b3558b37c34da
+      internalID: 2109592822
       vertices: []
       indices: 
       edges: []
@@ -220,11 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      vega_test_3: -1067740428
-      vega_test_1: 739952802
-      vega_test_2: 232004003
-      vega_test_4: 1721235872
-      vega_test_0: 746708234
+      SAD_POTATO_MAN_0: 1835504234
+      SAD_POTATO_MAN_2: 1829413988
+      SAD_POTATO_MAN_1: -2051702206
+      SAD_POTATO_MAN_3: -1973021892
+      SAD_POTATO_MAN_5: 2109592822
+      SAD_POTATO_MAN_4: 1961443108
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

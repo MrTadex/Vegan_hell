@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8bf621fdfa0e72241a62160194d72280
+guid: 1c462b54b4ff9874ca64710a5de23a7b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vegan_run1_0
+      name: sad_potato_left_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 58
+        width: 96
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76371c3bf8822524dab021158b146d8a
-      internalID: -363018419
+      spriteID: 212d769e9e99c86409b080b6e48c8f6d
+      internalID: -526083067
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vegan_run1_1
+      name: sad_potato_left_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 96
         y: 0
-        width: 64
-        height: 58
+        width: 96
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,41 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daaf4a322b9d91148b88048b94ea3b31
-      internalID: -1497409774
+      spriteID: d9e56b2252002f84e8b3fa5d919dbd28
+      internalID: -1716124253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vegan_run1_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a211eb7dc6eccb249ae5c3c3fff96eef
-      internalID: -1269371220
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vegan_run1_3
+      name: sad_potato_left_2
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 64
-        height: 58
+        width: 96
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80a4c0126cdf99341be8a0a3fb844513
-      internalID: -300873468
+      spriteID: d6a9bbeee0a8ae04abfc630dd5ea67e4
+      internalID: -1209446352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vegan_run1_4
+      name: sad_potato_left_3
       rect:
         serializedVersion: 2
-        x: 256
+        x: 288
         y: 0
-        width: 64
-        height: 58
+        width: 96
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,41 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84c02f98f0e2ce54aa300605268e794e
-      internalID: 1033352703
+      spriteID: 68cb95da7684b604ab607487872ef3cb
+      internalID: 1884105755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vegan_run1_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f90d94997c824884b8264fd2a8b7e22e
-      internalID: 1352616073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vegan_run1_6
+      name: sad_potato_left_4
       rect:
         serializedVersion: 2
         x: 384
         y: 0
-        width: 64
-        height: 58
+        width: 96
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5c4aeb2ac4ae4a4b847a2b1a1286c03
-      internalID: -17117002
+      spriteID: 5728f438a2066284e93c46aa2c1b0857
+      internalID: 1011019471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vegan_run1_7
+      name: sad_potato_left_5
       rect:
         serializedVersion: 2
-        x: 448
+        x: 480
         y: 0
-        width: 64
-        height: 58
+        width: 96
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72bae73a5be04ca4db29f2fce19c53f9
-      internalID: 982306257
+      spriteID: 089cbeec6efba7241ae8e2b4403bdd4a
+      internalID: 320535239
       vertices: []
       indices: 
       edges: []
@@ -283,14 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      vegan_run1_3: -300873468
-      vegan_run1_5: 1352616073
-      vegan_run1_1: -1497409774
-      vegan_run1_0: -363018419
-      vegan_run1_7: 982306257
-      vegan_run1_6: -17117002
-      vegan_run1_2: -1269371220
-      vegan_run1_4: 1033352703
+      sad_potato_left_0: -526083067
+      sad_potato_left_1: -1716124253
+      sad_potato_left_2: -1209446352
+      sad_potato_left_5: 320535239
+      sad_potato_left_3: 1884105755
+      sad_potato_left_4: 1011019471
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
