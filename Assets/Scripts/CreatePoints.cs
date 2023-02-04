@@ -17,6 +17,9 @@ public class CreatePoints : MonoBehaviour
     [SerializeField]
     Transform Bullets;
 
+    [SerializeField]
+    Transform Points;
+
     static int numberOfPoints = 8;
 
     [SerializeField]
@@ -46,7 +49,7 @@ public class CreatePoints : MonoBehaviour
 
         for (int i = 0; i < numberOfPoints; i++)
         {
-            Instantiate(Prefab, transform.position, transform.rotation, transform);
+            Instantiate(Prefab, transform.position, transform.rotation, Points);
         }
     }
 
@@ -59,12 +62,12 @@ public class CreatePoints : MonoBehaviour
         {
             points[i] = new Vector2(Mathf.Cos((i * OneStep) + offSet), Mathf.Sin((i * OneStep) + offSet));
 
-            transform.GetChild(i).transform.position = (points[i] + (Vector2)transform.position);
+            Points.GetChild(i).transform.position = (points[i] + (Vector2)transform.position);
 
             Vector2 facing = points[i];
 
             float angle = Mathf.Atan2(facing.y, facing.x) * Mathf.Rad2Deg;
-            transform.GetChild(i).transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            Points.GetChild(i).transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         }
 
         if (Input.GetKey(KeyCode.Q))
@@ -92,10 +95,11 @@ public class CreatePoints : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && canFire)
         {
-            foreach (Transform point in transform)
+            SoundManager.PlaySound("Bullet_shoot");
+
+            foreach (Transform point in Points)
             {
                 point.GetComponent<Animator>().SetTrigger("Shoot");
-                SoundManager.PlaySound("Bullet_shoot");
             }
 
             canFire = false;
