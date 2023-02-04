@@ -12,6 +12,10 @@ public class PlayerControler : MonoBehaviour
     [SerializeField]
     public float runSpeed = 5.0f;
 
+    public void GameOver () {
+        GameOverScreen.Setup(maxEnemyKills);
+    }
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
