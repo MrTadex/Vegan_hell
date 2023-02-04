@@ -19,9 +19,9 @@ public class GameManagement : MonoBehaviour
     [SerializeField]
     public GameOverScreen gameOverScreen;
     // [SerializeField]
-    // public PauseScreen pauseScreen;
-    public int maxEnemyKills = 0;
+    // public GameOverScreen pauseScreen;
 
+    public int maxEnemyKills = 0;
     public float Clock = 0;
     public int Health = 6;
 
@@ -64,6 +64,7 @@ public class GameManagement : MonoBehaviour
     public void UpdateGameState(GameState newState) {
         State = newState;
 
+
         switch (newState) {
             case GameState.PlayGame:
                 // Health = 6;
@@ -73,7 +74,7 @@ public class GameManagement : MonoBehaviour
             case GameState.PauseGame:
                 break;
             case GameState.GameOver:
-                Time.timeScale = 0;
+                Time.timeScale = 0f;
                 GameOver();
                 break;
         }
@@ -84,6 +85,5 @@ public class GameManagement : MonoBehaviour
     public void GameOver()
     {
         gameOverScreen.Setup(maxEnemyKills);
-        gameOverScreen.enabled = true;
     }
 }
