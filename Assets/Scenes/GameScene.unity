@@ -474,8 +474,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   State: 1
   KilledEnemies: {fileID: 1827847324}
-  currentTime: {fileID: 0}
-  endTime: {fileID: 0}
+  currentTime: {fileID: 196150230}
+  endTime: {fileID: 1827847324}
   image: {fileID: 863079045}
   sprites:
   - {fileID: 623947720, guid: 37a955f4c3077d348852503a7890bce8, type: 3}

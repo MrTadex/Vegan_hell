@@ -43,7 +43,7 @@ public class GameManagement : MonoBehaviour
 
     private void Start()
     {
-        UpdateGameState(GameState.PlayGame);
+        UpdateGameState(GameState.PauseGame);
     }
 
     private void Update()
