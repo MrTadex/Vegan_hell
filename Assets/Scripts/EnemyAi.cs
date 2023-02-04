@@ -69,7 +69,7 @@ public class EnemyAi : MonoBehaviour
             // audioSrc.PlayOneShot ("Bullet_shoot");
         }
 
-        if (collision.gameObject.tag == "Mele")
+        if (collision.gameObject.tag == "Melee")
         {
             gameManager.maxEnemyKills++;
             Destroy(gameObject);
