@@ -12,6 +12,9 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField]
     private GameObject enemyObj;
 
+    [SerializeField]
+    List<GameObject> Vegans = new List<GameObject>();
+
     public Transform container;
 
     // Start is called before the first frame update
@@ -25,6 +28,6 @@ public class EnemySpawn : MonoBehaviour
     {
         //Debug.Log(container.childCount);
         if (container.childCount < maxEnemies)
-            Instantiate(enemyObj, transform.position + new Vector3(Random.Range(-range, range) * buffer, Random.Range(-range, range) * buffer, 0.0f), transform.rotation, container);
+            Instantiate(Vegans[Random.Range(0, Vegans.Count)], transform.position + new Vector3(Random.Range(-range, range) * buffer, Random.Range(-range, range) * buffer, 0.0f), transform.rotation, container);
     }
 }
