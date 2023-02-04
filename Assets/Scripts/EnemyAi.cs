@@ -76,6 +76,7 @@ public class EnemyAi : MonoBehaviour
             Destroy(collision.gameObject);
             animator.SetTrigger("Damaged");
             Heath--;
+            SoundManager.PlaySound("Enemy_hit_bullet_attack");
         }
 
         if (collision.gameObject.tag == "Player")
@@ -88,6 +89,7 @@ public class EnemyAi : MonoBehaviour
             gameManager.maxEnemyKills++;
             animator.SetTrigger("Damaged");
             Heath -= 2;
+            SoundManager.PlaySound("Enemy_hit_root_attack");
         }
     }
 }

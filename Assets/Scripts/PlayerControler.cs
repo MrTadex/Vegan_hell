@@ -72,6 +72,7 @@ public class PlayerControler : MonoBehaviour
             animator.SetTrigger("Damaged");
 
             StartCoroutine(Invincibility());
+            SoundManager.PlaySound("Fire_hit_player");
         }
     }
 
@@ -85,6 +86,7 @@ public class PlayerControler : MonoBehaviour
             animator.SetTrigger("Damaged");
 
             StartCoroutine(Invincibility());
+            SoundManager.PlaySound("Enemy_attack");
         }
     }
 

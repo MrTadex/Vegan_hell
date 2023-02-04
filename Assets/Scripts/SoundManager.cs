@@ -31,6 +31,21 @@ public class SoundManager : MonoBehaviour
             case "Bullet_shoot":
                 audioSrc.PlayOneShot (Bullet_shoot);
                 break;
+            case "Enemy_attack":
+                audioSrc.PlayOneShot (Enemy_attack);
+                break;
+            case "Enemy_hit_bullet_attack":
+                audioSrc.PlayOneShot (Enemy_hit_bullet_attack);
+                break;
+            case "Enemy_hit_root_attack":
+                audioSrc.PlayOneShot (Enemy_hit_root_attack);
+                break;
+            case "Fire_hit_player":
+                audioSrc.PlayOneShot (Fire_hit_player);
+                break;
+            case "Root_attack":
+                audioSrc.PlayOneShot (Root_attack);
+                break;
             default:
                 break;
         }
