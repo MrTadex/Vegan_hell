@@ -22,7 +22,10 @@ public class GameManagement : MonoBehaviour
     public TextMeshProUGUI KilledEnemies;
 
     [SerializeField]
-    public TextMeshProUGUI pointsText;
+    public TextMeshProUGUI currentTime;
+
+    [SerializeField]
+    public TextMeshProUGUI endTime;
 
     [SerializeField]
     public Image image;
@@ -49,7 +52,7 @@ public class GameManagement : MonoBehaviour
             Clock += Time.deltaTime;
 
         string v = Clock.ToString("F0");
-        pointsText.text = v;
+        currentTime.text = v;
 
         image.sprite = sprites[Health];
 
@@ -97,5 +100,6 @@ public class GameManagement : MonoBehaviour
     {
         Time.timeScale = 0f;
         KilledEnemies.text = maxEnemyKills.ToString() + " Kills";
+        endTime.text = currentTime.text;
     }
 }
