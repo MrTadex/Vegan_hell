@@ -47,6 +47,9 @@ public class GameManagement : MonoBehaviour
 
         switch (newState) {
             case GameState.PlayGame:
+                Health = 6;
+                Clock = 0;
+                maxEnemyKills = 0;
                 break;
             case GameState.PauseGame:
                 break;
