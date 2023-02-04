@@ -384,6 +384,7 @@ GameObject:
   - component: {fileID: 1229627321}
   - component: {fileID: 1229627324}
   - component: {fileID: 1229627325}
+  - component: {fileID: 1229627326}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -538,6 +539,34 @@ MonoBehaviour:
   Bullet: {fileID: 2100258496481941140, guid: 70707a71aa8a5954b832e7a866fe2ae3, type: 3}
   Bullets: {fileID: 1405677061}
   force: 15
+--- !u!114 &1229627326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229627318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e531ce95925ff4c819dd21c306cf4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 271246408905608829, guid: 5c078753d00f6e546b3444898fb4c7b7, type: 3}
+  Bullet: {fileID: 2100258496481941140, guid: 70707a71aa8a5954b832e7a866fe2ae3, type: 3}
+  Bullets: {fileID: 1405677061}
+  offSet: 0
+  offSetSpeed: 1
+  force: 1.5
+  setTimer: 2.5
+  points:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
 --- !u!1 &1405677060
 GameObject:
   m_ObjectHideFlags: 0
