@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 public enum GameState {
     GameOver,
@@ -21,6 +22,9 @@ public class GameManagement : MonoBehaviour
     // [SerializeField]
     // public GameOverScreen pauseScreen;
 
+    [SerializeField]
+    public TextMeshProUGUI pointsText;
+
     public int maxEnemyKills = 0;
     public float Clock = 0;
     public int Health = 6;
@@ -36,9 +40,9 @@ public class GameManagement : MonoBehaviour
 
     private void Update()
     {
-        Clock *= Time.deltaTime;
-
-        if(Health < 1)
+        Clock += Time.deltaTime;
+        pointsText.text = Clock.ToString("F0");
+        if (Health < 1)
         {
             UpdateGameState(GameState.GameOver);
         }
@@ -57,8 +61,9 @@ public class GameManagement : MonoBehaviour
                 UpdateGameState(GameState.PlayGame);
                 Debug.Log("UnPaused");
             }
-
         }
+
+
     }
 
     public void UpdateGameState(GameState newState) {
