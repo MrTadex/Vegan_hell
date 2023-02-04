@@ -36,23 +36,27 @@ public class EnemyAi : MonoBehaviour
     {
         if (Heath < 1)
         {
-            Destroy(gameObject);
+            animator.SetTrigger("Dead");
+            chase = false;
+            Destroy(gameObject, 1);
         }
     }
 
     void FixedUpdate()
     {
-        if(playerObj.transform.position.x > transform.position.x)
-        {
-            body.transform.localScale = new Vector3(-1,1,1);
-        }
-        else
-        {
-            body.transform.localScale = new Vector3(1, 1, 1);
-        }
-
         if (chase)
+        {
+            if (playerObj.transform.position.x > transform.position.x)
+            {
+                body.transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else
+            {
+                body.transform.localScale = new Vector3(1, 1, 1);
+            }
+
             transform.position = Vector3.MoveTowards(transform.position, playerObj.transform.position, runSpeed * Time.fixedDeltaTime);
+        }
     }
 
     //Just hit another collider 2D
