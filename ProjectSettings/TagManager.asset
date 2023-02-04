@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
-  - melee
+  - Fire
+  - Melee
+  - Enemy
   layers:
   - Default
   - TransparentFX
