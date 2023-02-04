@@ -18,6 +18,8 @@ public class GameManagement : MonoBehaviour
 
     [SerializeField]
     public GameOverScreen gameOverScreen;
+    // [SerializeField]
+    // public PauseScreen pauseScreen;
     public int maxEnemyKills = 0;
 
     public float Clock = 0;
@@ -40,6 +42,23 @@ public class GameManagement : MonoBehaviour
         {
             UpdateGameState(GameState.GameOver);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log(State.ToString());
+            if (State.ToString() == "PlayGame") {
+                Time.timeScale = 0f;
+                AudioListener.pause = true;
+                UpdateGameState(GameState.PauseGame);
+                Debug.Log("Paused");
+            } else {
+                Time.timeScale = 1;
+                AudioListener.pause = false;
+                UpdateGameState(GameState.PlayGame);
+                Debug.Log("UnPaused");
+            }
+
+        }
     }
 
     public void UpdateGameState(GameState newState) {
@@ -47,13 +66,14 @@ public class GameManagement : MonoBehaviour
 
         switch (newState) {
             case GameState.PlayGame:
-                Health = 6;
-                Clock = 0;
-                maxEnemyKills = 0;
+                // Health = 6;
+                // Clock = 0;
+                // maxEnemyKills = 0;
                 break;
             case GameState.PauseGame:
                 break;
             case GameState.GameOver:
+                Time.timeScale = 0;
                 GameOver();
                 break;
         }
