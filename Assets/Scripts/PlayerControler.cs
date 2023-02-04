@@ -14,8 +14,10 @@ public class PlayerControler : MonoBehaviour
     [SerializeField]
     public float runSpeed = 5.0f;
 
+    int maxEnemyKills;
+
     public void GameOver () {
-        GameOverScreen.Setup(maxEnemyKills);
+        //GameOverScreen.Setup(maxEnemyKills);
     }
 
     void Start()
@@ -23,6 +25,8 @@ public class PlayerControler : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
+
+        maxEnemyKills = FindObjectOfType<GameManager>().maxEnemyKills;
     }
 
     void Update()

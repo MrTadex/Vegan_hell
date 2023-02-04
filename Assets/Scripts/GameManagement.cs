@@ -25,8 +25,8 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
-    public void UpdateGameState(Gamestate newState) {
-        state = newState;
+    public void UpdateGameState(GameState newState) {
+        State = newState;
 
         switch (newState) {
             case GameState.PlayGame:
@@ -35,8 +35,9 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.GameOver:
                 break;
-            case default:
+            default: 
                 break;
+                
         }
     }
 

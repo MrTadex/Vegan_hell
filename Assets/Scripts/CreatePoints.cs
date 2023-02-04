@@ -102,7 +102,11 @@ public class CreatePoints : MonoBehaviour
                 Vector2 Direction = ((points[i] + (Vector2)transform.position) - (Vector2)transform.position).normalized;
                 GameObject obj = Instantiate(Bullet, points[i] + (Vector2)transform.position, transform.rotation, Bullets);
                 Rigidbody2D b = obj.GetComponent<Rigidbody2D>();
-                b.AddForce(Direction * force + this.GetComponent<Rigidbody2D>().velocity, ForceMode2D.Impulse);
+                b.AddForce(Direction * force /*+ this.GetComponent<Rigidbody2D>().velocity*/, ForceMode2D.Impulse);
+
+                float angle = Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg;
+                obj.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
                 Destroy(obj, 10);
             }
         }

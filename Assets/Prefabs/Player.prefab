@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2430272778323021109}
   - component: {fileID: 4365034206197986165}
   - component: {fileID: 2430272778323021113}
-  - component: {fileID: 2430272778323021112}
   - component: {fileID: 2430272778323021115}
   - component: {fileID: 2430272778323021117}
+  - component: {fileID: 2430272778323021112}
   - component: {fileID: 2430272778323021118}
   - component: {fileID: 2430272778323021119}
   - component: {fileID: 2430272778323021116}
@@ -76,19 +76,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2430272778323021112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2430272778323021108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6a667d3f6936f44c908480e36868296, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runSpeed: 100
 --- !u!212 &2430272778323021115
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -161,6 +148,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2430272778323021112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2430272778323021108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a667d3f6936f44c908480e36868296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 100
 --- !u!114 &2430272778323021118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,8 +208,8 @@ MonoBehaviour:
   Bullets: {fileID: 0}
   offSet: 0
   offSetSpeed: 1
-  force: 1.5
-  setTimer: 0.5
+  force: 6
+  setTimer: 1
   points:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
