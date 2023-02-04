@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 271246408905608829, guid: 5c078753d00f6e546b3444898fb4c7b7, type: 3}
-  Bullet: {fileID: 2100258496481941140, guid: 70707a71aa8a5954b832e7a866fe2ae3, type: 3}
+  Bullet: {fileID: 2100258496481941140, guid: a9aa2e896b8396c458338da0affa4714, type: 3}
   Bullets: {fileID: 0}
   offSet: 0
   offSetSpeed: 1

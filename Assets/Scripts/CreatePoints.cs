@@ -60,7 +60,7 @@ public class CreatePoints : MonoBehaviour
 
             transform.GetChild(i).transform.position = (points[i] + (Vector2)transform.position);
 
-            Vector2 facing = (points[i] + (Vector2)transform.position) - (Vector2)transform.position;
+            Vector2 facing = points[i];
 
             float angle = Mathf.Atan2(facing.y, facing.x) * Mathf.Rad2Deg;
             transform.GetChild(i).transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));

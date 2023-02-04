@@ -953,12 +953,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 735b56d2b6c51fe43a76505e07bf21db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa9c9d68655b6474d9f58c8f6c79c4c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 200, y: 200}
+  m_Size: {x: 200.3, y: 200.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1958,6 +1958,14 @@ PrefabInstance:
       propertyPath: container
       value: 
       objectReference: {fileID: 2114667527}
+    - target: {fileID: 2430272778323021119, guid: 8093e69705c49c84fb8af7c9fd281364, type: 3}
+      propertyPath: Mark
+      value: 
+      objectReference: {fileID: 2599443754447743936, guid: 6bee6501b5b1b1b49b594b185a8fdafb, type: 3}
+    - target: {fileID: 2430272778323021119, guid: 8093e69705c49c84fb8af7c9fd281364, type: 3}
+      propertyPath: Weapon
+      value: 
+      objectReference: {fileID: 2356933419151746975, guid: 22adc197fc69d9c4e8dcfc87a41d0c73, type: 3}
     - target: {fileID: 2430272778323021119, guid: 8093e69705c49c84fb8af7c9fd281364, type: 3}
       propertyPath: Bullets
       value: 

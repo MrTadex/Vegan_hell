@@ -56,15 +56,21 @@ public class EnemyAi : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
+            gameManager.maxEnemyKills++;
             Destroy(collision.gameObject);
             Destroy(gameObject);
-            gameManager.maxEnemyKills++;
         }
 
         if (collision.gameObject.tag == "Player")
         {
             chase = false;
             gameManager.Health--;
+        }
+
+        if (collision.gameObject.tag == "Mele")
+        {
+            gameManager.maxEnemyKills++;
+            Destroy(gameObject);
         }
     }
 }

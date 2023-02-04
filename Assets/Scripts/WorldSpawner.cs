@@ -59,7 +59,7 @@ public class WorldSpawner : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log(Per);
+                    //Debug.Log(Per);
                 }
                 
                 CurPoz.x += interpolatMargin;

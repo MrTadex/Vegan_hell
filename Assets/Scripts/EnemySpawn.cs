@@ -23,7 +23,7 @@ public class EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Spawn()
     {
-        Debug.Log(container.childCount);
+        //Debug.Log(container.childCount);
         if (container.childCount < maxEnemies)
             Instantiate(enemyObj, transform.position + new Vector3(Random.Range(-range, range) * buffer, Random.Range(-range, range) * buffer, 0.0f), transform.rotation, container);
     }
