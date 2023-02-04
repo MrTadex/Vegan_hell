@@ -81,7 +81,6 @@ public class PlayerControler : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy" && !Invicibale)
         {
-            Debug.Log(collision.attachedRigidbody.name);
             gameManager.Health--;
             animator.SetTrigger("Damaged");
 

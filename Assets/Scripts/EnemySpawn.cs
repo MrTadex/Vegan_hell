@@ -22,48 +22,60 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField]
     int Amount = 50;
 
+    float Timer = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         Clock = (int)FindObjectOfType<GameManagement>().Clock;
-
-        //InvokeRepeating("Spawn", 0, 0.2f);
     }
     private void Update()
     {
+        //*InvokeRepeating("Spawn", 0, SpawnRate);
+
+        Timer += Time.deltaTime;
+
+        if(Timer >= SpawnRate)
+        {
+            Spawn();
+            Timer -= SpawnRate;
+        }
+
         switch (Clock)
         {
-            case <=30:
-                SpawnRate = 0.5f;
-                Amount = 50;
-                break;
-            case >30 and <= 40: // 1. Wave
-                SpawnRate = 0.1f;
-                Amount = 100;
-                break;
-            case >40 and <= 70:
-                Amount = 75;
-                SpawnRate = 0.4f;
-                break;
-            case >70 and <= 80: // 2. Wave
-                Amount = 125;
+            case > 150: // Death Wave
+                Amount = 300;
                 SpawnRate = 0.1f;
                 break;
-            case >80 and <= 120:
-                Amount = 100;
-                SpawnRate = 0.3f;
-                break;
-            case >120 and <= 130: // 3. Wave
-                Amount = 175;
-                SpawnRate = 0.1f;
-                break;
-            case >130 and <= 150:
+            case > 130 and <= 150:
                 Amount = 150;
                 SpawnRate = 0.3f;
                 break;
-            case >150: // Death Wave
-                Amount = 300;
+            case > 120 and <= 130: // 3. Wave
+                Amount = 175;
                 SpawnRate = 0.1f;
+                break;
+            case > 80 and <= 120:
+                Amount = 100;
+                SpawnRate = 0.3f;
+                break;
+            case > 70 and <= 80: // 2. Wave
+                Amount = 125;
+                SpawnRate = 0.1f;
+                break;
+            case > 40 and <= 70:
+                Amount = 75;
+                SpawnRate = 0.4f;
+                break;
+            case > 30 and <= 40: // 1. Wave
+                SpawnRate = 0.1f;
+                Amount = 100;
+                Debug.Log("2");
+                break;
+            case <= 30:
+                SpawnRate = 0.5f;
+                Amount = 50;
+                Debug.Log("1");
                 break;
         }
     }
