@@ -60,6 +60,7 @@ public class EnemyAi : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            // maxEnemyKills++;
         }
 
         if (collision.gameObject.tag == "Player")
