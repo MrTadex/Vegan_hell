@@ -39,13 +39,10 @@ public class CreatePoints : MonoBehaviour
 
     float OneStep;
 
-    public static AudioClip bulletShoot;
-    static AudioSource audioSrc;
 
     // Start is called before the first frame update
     void Start()
     {
-        bulletShoot = Resources.Load<AudioClip> ("Bullet_shoot");
 
         for (int i = 0; i < numberOfPoints; i++)
         {

@@ -14,6 +14,7 @@ public class PlayerControler : MonoBehaviour
     [SerializeField]
     public float runSpeed = 5.0f;
 
+    //player sound
     AudioSource audioSrc;
 
     void Start()
