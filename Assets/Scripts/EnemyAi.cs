@@ -6,20 +6,24 @@ public class EnemyAi : MonoBehaviour
 {
     Rigidbody2D body;
     SpriteRenderer sp;
+    Animator animator;
     GameManagement gameManager;
 
     bool chase = true;
+
+    [SerializeField]
+    int Heath = 2;
 
     private GameObject playerObj;
 
     [SerializeField]
     public float runSpeed = 5.0f;
 
-
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         sp= GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
 
         gameManager = FindObjectOfType<GameManagement>();
 
@@ -28,16 +32,23 @@ public class EnemyAi : MonoBehaviour
             playerObj = FindObjectOfType<PlayerControler>().gameObject;
     }
 
+    private void Update()
+    {
+        if (Heath < 1)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void FixedUpdate()
     {
-
         if(playerObj.transform.position.x > transform.position.x)
         {
-            sp.flipX= true;
+            body.transform.localScale = new Vector3(-1,1,1);
         }
         else
         {
-            sp.flipX = false;
+            body.transform.localScale = new Vector3(1, 1, 1);
         }
 
         if (chase)
@@ -59,7 +70,8 @@ public class EnemyAi : MonoBehaviour
         {
             gameManager.maxEnemyKills++;
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            animator.SetTrigger("Damaged");
+            Heath--;
         }
 
         if (collision.gameObject.tag == "Player")
@@ -70,7 +82,8 @@ public class EnemyAi : MonoBehaviour
         if (collision.gameObject.tag == "Melee")
         {
             gameManager.maxEnemyKills++;
-            Destroy(gameObject);
+            animator.SetTrigger("Damaged");
+            Heath -= 2;
         }
     }
 }

@@ -30,8 +30,10 @@ public class PlayerMele: MonoBehaviour
         Vector2 Direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - Camera.main.transform.position).normalized;
         float angle = Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg;
 
-        Debug.Log(Direction);
+        //Debug.Log(Direction);
         mark.transform.position = (new Vector3(Direction.x, Direction.y, -1) * 1.35f) + transform.position;
+
+        obj.transform.position = new Vector3( transform.position.x, transform.position.y, transform.position.z+1);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -47,5 +49,6 @@ public class PlayerMele: MonoBehaviour
         obj.GetComponent<BoxCollider2D>().enabled = true;
         yield return new WaitForSeconds(0.5f);
         obj.GetComponent<BoxCollider2D>().enabled = false;
+        yield return null;
     }
 }
