@@ -475,6 +475,15 @@ MonoBehaviour:
   State: 1
   KilledEnemies: {fileID: 1827847324}
   pointsText: {fileID: 196150230}
+  image: {fileID: 863079045}
+  sprites:
+  - {fileID: 623947720, guid: 37a955f4c3077d348852503a7890bce8, type: 3}
+  - {fileID: -783802593, guid: 37a955f4c3077d348852503a7890bce8, type: 3}
+  - {fileID: -752090306, guid: 37a955f4c3077d348852503a7890bce8, type: 3}
+  - {fileID: -878819363, guid: 37a955f4c3077d348852503a7890bce8, type: 3}
+  - {fileID: 1785345001, guid: 37a955f4c3077d348852503a7890bce8, type: 3}
+  - {fileID: 861000999, guid: 37a955f4c3077d348852503a7890bce8, type: 3}
+  - {fileID: -1586517764, guid: 37a955f4c3077d348852503a7890bce8, type: 3}
   maxEnemyKills: 0
   Clock: 0
   Health: 6
