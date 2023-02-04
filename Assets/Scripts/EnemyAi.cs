@@ -65,8 +65,6 @@ public class EnemyAi : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             chase = false;
-            gameManager.Health--;
-            // audioSrc.PlayOneShot ("Bullet_shoot");
         }
 
         if (collision.gameObject.tag == "Melee")

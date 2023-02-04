@@ -7,9 +7,15 @@ public class PlayerControler : MonoBehaviour
     Rigidbody2D body;
     Animator animator;
     SpriteRenderer spriteRenderer;
+    GameManagement gameManager;
 
     float horizontal;
     float vertical;
+
+    bool Invicibale = false;
+
+    [SerializeField]
+    float InvicibaleDuration = 1.0f;
 
     [SerializeField]
     public float runSpeed = 5.0f;
@@ -23,6 +29,7 @@ public class PlayerControler : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSrc = GetComponent<AudioSource> ();
+        gameManager = FindObjectOfType<GameManagement>();
     }
 
     void Update()
@@ -55,5 +62,35 @@ public class PlayerControler : MonoBehaviour
     private void FixedUpdate()
     {
         body.velocity = new Vector2(horizontal * runSpeed * Time.fixedDeltaTime, vertical * runSpeed * Time.fixedDeltaTime);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Fire" && !Invicibale)
+        {
+            gameManager.Health--;
+            animator.SetTrigger("Damaged");
+
+            StartCoroutine(Invincibility());
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.tag == "Enemy" && !Invicibale)
+        {
+            gameManager.Health--;
+            animator.SetTrigger("Damaged");
+
+            StartCoroutine(Invincibility());
+        }
+    }
+
+    private IEnumerator Invincibility()
+    {
+        Invicibale = true;
+        yield return new WaitForSeconds(InvicibaleDuration);
+        Invicibale = false;
     }
 }

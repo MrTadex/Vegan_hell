@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 6586324519168580648}
   - component: {fileID: 4385937037369694648}
   m_Layer: 0
-  m_Name: Vegan
-  m_TagString: Untagged
+  m_Name: BeeVegan
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -363018419, guid: 8bf621fdfa0e72241a62160194d72280, type: 3}
+  m_Sprite: {fileID: -2042457202, guid: d245649469d1a9348920c502f66deb60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
