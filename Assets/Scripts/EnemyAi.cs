@@ -125,6 +125,7 @@ public class EnemyAi : MonoBehaviour
 
         IEnumerator WaitForFunction()
         {
+            SoundManager.PlaySound("Munching_sound");
             yield return new WaitForSeconds(3);
             chase = true;
         }
