@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 2430272778323021119}
   - component: {fileID: 2430272778323021116}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Sunflower
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +54,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.03}
+  m_Offset: {x: 0, y: -0.31}
   m_Size: {x: 0.48, y: 1.13}
   m_Direction: 0
 --- !u!50 &2430272778323021113
@@ -119,7 +119,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1835504234, guid: f90544e7f4fd08a409ece4ba89acc67b, type: 3}
+  m_Sprite: {fileID: 727639224, guid: 57c57b74e1c43434981a3df6c01f64d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140,7 +140,7 @@ Animator:
   m_GameObject: {fileID: 2430272778323021108}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2f26d8b28bdabbb428116e7e604281ae, type: 2}
+  m_Controller: {fileID: 9100000, guid: ee0ffa702d0f883479fbb5e592436955, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -272,13 +272,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85bd8fea447368e45bac7af5d8ffa9a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
-  enemyObj: {fileID: 7871210757275099170, guid: 7cd995c3387cc3345a858c32a127b2da, type: 3}
+  range: 20
   Vegans:
   - {fileID: 7871210757275099170, guid: 7cd995c3387cc3345a858c32a127b2da, type: 3}
   - {fileID: 7871210757275099170, guid: 132cc2a9e8a61ea42a2cf66daad84627, type: 3}
   - {fileID: 7871210757275099170, guid: 11c818577f46a0042ac06524af20a480, type: 3}
   container: {fileID: 0}
+  SpawnRate: 0.5
+  Amount: 50
 --- !u!114 &2430272778323021119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,8 +292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7469288746f3a424b95f250181d27d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weapon: {fileID: 2356933419151746975, guid: 22adc197fc69d9c4e8dcfc87a41d0c73, type: 3}
-  Mark: {fileID: 271246408905608829, guid: 5c078753d00f6e546b3444898fb4c7b7, type: 3}
+  Weapon: {fileID: 2356933419151746975, guid: ac706ef38df85ab4ea5f1446d0a92d17, type: 3}
+  Mark: {fileID: 2599443754447743936, guid: 6bee6501b5b1b1b49b594b185a8fdafb, type: 3}
 --- !u!114 &2430272778323021116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,8 +306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e531ce95925ff4c819dd21c306cf4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 271246408905608829, guid: 5c078753d00f6e546b3444898fb4c7b7, type: 3}
-  Bullet: {fileID: 2100258496481941140, guid: a9aa2e896b8396c458338da0affa4714, type: 3}
+  Prefab: {fileID: 271246408905608829, guid: 1a3f4c0292290fe47a741d420446ad50, type: 3}
+  Bullet: {fileID: 2100258496481941140, guid: 38cc2458f16d7784fbd07ed3ce2d5d28, type: 3}
   Bullets: {fileID: 0}
   Points: {fileID: 6124160033336862347}
   offSet: 0

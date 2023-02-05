@@ -71,8 +71,6 @@ public class GameManagement : MonoBehaviour
                 UpdateGameState(GameState.PlayGame);
             }
         }
-
-
     }
 
     public void UpdateGameState(GameState newState) {

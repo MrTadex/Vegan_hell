@@ -27,7 +27,8 @@ public class PlayerMele: MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Vector2 Direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - Camera.main.transform.position).normalized;
+        Vector2 Direction = (new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0) - /*Camera.main.*/transform.position).normalized;
+        // Fix gittering
         float angle = Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg;
 
         mark.transform.position = (new Vector3(Direction.x, Direction.y, -1) * 1.35f) + transform.position;

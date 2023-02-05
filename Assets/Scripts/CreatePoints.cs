@@ -38,7 +38,7 @@ public class CreatePoints : MonoBehaviour
 
     bool canFire = true;
 
-    public Vector2[] points = new Vector2[numberOfPoints];
+    List<Vector2> points = new List<Vector2>();
 
     float OneStep;
 
@@ -49,6 +49,7 @@ public class CreatePoints : MonoBehaviour
 
         for (int i = 0; i < numberOfPoints; i++)
         {
+            points.Add(Vector2.zero);
             Instantiate(Prefab, transform.position, transform.rotation, Points);
         }
     }
@@ -56,6 +57,7 @@ public class CreatePoints : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Chainge TO make Difrent Shape
         OneStep = Mathf.Deg2Rad * ((360 / numberOfPoints));
 
         for (int i = 0; i < numberOfPoints; i++)

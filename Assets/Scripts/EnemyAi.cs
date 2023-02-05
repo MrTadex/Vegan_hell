@@ -58,16 +58,6 @@ public class EnemyAi : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, playerObj.transform.position, runSpeed * Time.fixedDeltaTime);
         }
     }
-
-    //Just hit another collider 2D
-   /* private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player") {
-            chase = false;
-            Destroy(gameObject);
-        }
-    }*/
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Bullet")

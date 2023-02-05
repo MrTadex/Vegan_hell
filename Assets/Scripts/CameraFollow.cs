@@ -11,14 +11,38 @@ public class CameraFollow : MonoBehaviour
     public Vector3 locationOffset;
     public Vector3 rotationOffset;
 
+    float mapX = 200.3f;
+    float mapY = 200.3f;
+
+    private float minX;
+    private float maxX;
+    private float minY;
+    private float maxY;
+
+    private void Start()
+    {
+        var vertExtent = Camera.main.orthographicSize;
+        var horzExtent = vertExtent * Screen.width / Screen.height;
+
+        // Calculations assume map is position at the origin
+        minX = horzExtent - mapX / 2;
+        maxX = mapX / 2 - horzExtent;
+        minY = vertExtent - mapY / 2;
+        maxY = mapY / 2 - vertExtent;
+    }
+
     void FixedUpdate()
     {
         Vector3 desiredPosition = target.position + target.rotation * locationOffset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         transform.position = smoothedPosition;
+    }
 
-        Quaternion desiredrotation = target.rotation * Quaternion.Euler(rotationOffset);
-        Quaternion smoothedrotation = Quaternion.Lerp(transform.rotation, desiredrotation, smoothSpeed);
-        transform.rotation = smoothedrotation;
+    private void LateUpdate()
+    {
+        var v3 = transform.position;
+        v3.x = Mathf.Clamp(v3.x, minX, maxX);
+        v3.y = Mathf.Clamp(v3.y, minY, maxY);
+        transform.position = v3;
     }
 }
