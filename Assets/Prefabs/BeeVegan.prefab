@@ -177,5 +177,9 @@ MonoBehaviour:
   Heath: 1
   runSpeed: 3
   InvicibaleDuration: 1
-  DropChance: 10
-  PickUp: {fileID: 6754989245925779545, guid: c666278fd003c854aa8caea3f8d63b7c, type: 3}
+  DropChanceClass: 10
+  DropChanceHealth: 30
+  DropRatio: 30
+  PickUp:
+  - {fileID: 6754989245925779545, guid: c666278fd003c854aa8caea3f8d63b7c, type: 3}
+  - {fileID: 6754989245925779545, guid: 174bceed2ecb7224085922d870071e05, type: 3}
