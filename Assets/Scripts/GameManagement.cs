@@ -44,6 +44,7 @@ public class GameManagement : MonoBehaviour
     private void Start()
     {
         UpdateGameState(GameState.PauseGame);
+
     }
 
     private void Update()
@@ -85,7 +86,7 @@ public class GameManagement : MonoBehaviour
                 Time.timeScale = 0f;
                 break;
             case GameState.GameOver:
-                SoundManager.PlayBackgroundMusic("bad_end_music");
+                // SoundManager.PlayBackgroundMusic("bad_end_music");
                 GameOver();
                 break;
         }
