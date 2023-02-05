@@ -82,6 +82,7 @@ public class EnemyAi : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             chase = false;
+            StartCoroutine(WaitForFunction());
         }
 
         if (collision.gameObject.tag == "Melee")
@@ -90,6 +91,12 @@ public class EnemyAi : MonoBehaviour
             animator.SetTrigger("Damaged");
             Heath -= 2;
             SoundManager.PlaySound("Enemy_hit_root_attack");
+        }
+
+        IEnumerator WaitForFunction()
+        {
+            yield return new WaitForSeconds(3);
+            chase = true;
         }
     }
 }
