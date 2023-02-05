@@ -294,6 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Weapon: {fileID: 2356933419151746975, guid: c64e1e27fa17a33408ed5d527bd0ab04, type: 3}
   Mark: {fileID: 2599443754447743936, guid: dc56a5edd7d7739469f46f15d8ae7383, type: 3}
+  setTimer: 1
 --- !u!114 &2430272778323021116
 MonoBehaviour:
   m_ObjectHideFlags: 0

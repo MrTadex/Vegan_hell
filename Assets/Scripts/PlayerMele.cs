@@ -16,6 +16,13 @@ public class PlayerMele: MonoBehaviour
     GameObject obj;
     GameObject mark;
 
+    [SerializeField]
+    float setTimer = 2.5f;
+
+    float timer = 0;
+
+    bool canAttack = true;
+
     void Start()
     {
         obj = Instantiate(Weapon, new Vector3(transform.position.x, transform.position.y, 1), transform.rotation, transform);
@@ -35,10 +42,25 @@ public class PlayerMele: MonoBehaviour
 
         obj.transform.position = new Vector3( transform.position.x, transform.position.y, transform.position.z+1);
 
-        if (Input.GetMouseButtonDown(0))
+        if (!canAttack)
         {
+            if (timer < setTimer)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                timer = 0;
+                canAttack = true;
+            }
+        }
+
+        if (Input.GetMouseButtonDown(0) && canAttack)
+        {
+            canAttack = false;
             obj.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             obj.GetComponent<Animator>().SetTrigger("Attack");
+            SoundManager.PlaySound("Root_attack");
 
             StartCoroutine(EnableAndDisable());
         }
@@ -47,9 +69,7 @@ public class PlayerMele: MonoBehaviour
     private IEnumerator EnableAndDisable()
     {
         obj.GetComponent<BoxCollider2D>().enabled = true;
-        SoundManager.PlaySound("Root_attack");
         yield return new WaitForSeconds(0.5f);
         obj.GetComponent<BoxCollider2D>().enabled = false;
-        yield return null;
     }
 }

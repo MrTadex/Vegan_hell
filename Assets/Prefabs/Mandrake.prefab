@@ -294,6 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Weapon: {fileID: 2356933419151746975, guid: 22adc197fc69d9c4e8dcfc87a41d0c73, type: 3}
   Mark: {fileID: 2599443754447743936, guid: 6bee6501b5b1b1b49b594b185a8fdafb, type: 3}
+  setTimer: 1
 --- !u!114 &2430272778323021116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,19 +311,12 @@ MonoBehaviour:
   Bullet: {fileID: 2100258496481941140, guid: a9aa2e896b8396c458338da0affa4714, type: 3}
   Bullets: {fileID: 0}
   Points: {fileID: 6124160033336862347}
+  numberOfPoints: 8
+  Deg: 360
   offSet: 0
   offSetSpeed: 1
   force: 6
-  setTimer: 1
-  points:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
+  setTimer: 0.8
 --- !u!1 &4214956199717326093
 GameObject:
   m_ObjectHideFlags: 0
