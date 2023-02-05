@@ -20,7 +20,11 @@ public class CreatePoints : MonoBehaviour
     [SerializeField]
     Transform Points;
 
-    static int numberOfPoints = 8;
+    [SerializeField]
+    int numberOfPoints = 8;
+
+    [SerializeField]
+    float Deg = 360;
 
     [SerializeField]
     float offSet = 0;
@@ -58,7 +62,7 @@ public class CreatePoints : MonoBehaviour
     void Update()
     {
         // Chainge TO make Difrent Shape
-        OneStep = Mathf.Deg2Rad * ((360 / numberOfPoints));
+        OneStep = Mathf.Deg2Rad * ((Deg / numberOfPoints));
 
         for (int i = 0; i < numberOfPoints; i++)
         {
