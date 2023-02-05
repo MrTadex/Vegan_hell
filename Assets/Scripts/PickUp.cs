@@ -28,7 +28,7 @@ public class PickUp : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            //SoundManager.PlaySound("Fire_hit_player");
+            SoundManager.PlaySound("PowerUp");
             ChangePlayer(collision.gameObject);
             Destroy(gameObject);
         }
