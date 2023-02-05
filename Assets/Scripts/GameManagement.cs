@@ -64,15 +64,11 @@ public class GameManagement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             if (State == GameState.PlayGame) {
-                Time.timeScale = 0f;
                 AudioListener.pause = true;
                 UpdateGameState(GameState.PauseGame);
-                Debug.Log("Paused");
             } else {
-                Time.timeScale = 1f;
                 AudioListener.pause = false;
                 UpdateGameState(GameState.PlayGame);
-                Debug.Log("UnPaused");
             }
         }
 
@@ -85,8 +81,10 @@ public class GameManagement : MonoBehaviour
 
         switch (newState) {
             case GameState.PlayGame:
+                Time.timeScale = 1f;
                 break;
             case GameState.PauseGame:
+                Time.timeScale = 0f;
                 break;
             case GameState.GameOver:
                 GameOver();

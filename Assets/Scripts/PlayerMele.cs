@@ -30,7 +30,6 @@ public class PlayerMele: MonoBehaviour
         Vector2 Direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - Camera.main.transform.position).normalized;
         float angle = Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg;
 
-        //Debug.Log(Direction);
         mark.transform.position = (new Vector3(Direction.x, Direction.y, -1) * 1.35f) + transform.position;
 
         obj.transform.position = new Vector3( transform.position.x, transform.position.y, transform.position.z+1);

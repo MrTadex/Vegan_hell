@@ -97,7 +97,6 @@ public class EnemyAi : MonoBehaviour
         {
             yield return new WaitForSeconds(3);
             chase = true;
-            Debug.Log("CHASE!");  
         }
     }
 }
