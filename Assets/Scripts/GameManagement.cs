@@ -39,6 +39,8 @@ public class GameManagement : MonoBehaviour
     [Range(0, 6)]
     public int Health = 6;
 
+    bool ClockAlive = true;
+
     void Awake() {
         Instance = this;
     }
@@ -50,7 +52,7 @@ public class GameManagement : MonoBehaviour
 
     private void Update()
     {
-        if(Time.deltaTime != 0)
+        if(Time.deltaTime != 0 && ClockAlive)
             Clock += Time.deltaTime;
 
         string v = Clock.ToString("F0");
@@ -85,9 +87,13 @@ public class GameManagement : MonoBehaviour
         switch (newState) {
             case GameState.PlayGame:
                 Time.timeScale = 1f;
+                ClockAlive = true;
+                Camera.main.GetComponent<CameraFollow>().target.SetActive(true);
                 break;
             case GameState.PauseGame:
                 Time.timeScale = 0f;
+                ClockAlive = false;
+                Camera.main.GetComponent<CameraFollow>().target.SetActive(false);
                 break;
             case GameState.GameOver:
                 // SoundManager.PlayBackgroundMusic("bad_end_music");
@@ -101,6 +107,8 @@ public class GameManagement : MonoBehaviour
     public void GameOver()
     {
         //Time.timeScale = 0f;
+        Camera.main.GetComponent<CameraFollow>().target.SetActive(false);
+        ClockAlive = false;
         Time.timeScale = 1f;
         KilledEnemies.text = maxEnemyKills.ToString() + " Kills";
         endTime.text = currentTime.text;
