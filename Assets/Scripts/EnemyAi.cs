@@ -49,12 +49,12 @@ public class EnemyAi : MonoBehaviour
         gameManager = FindObjectOfType<GameManagement>();
         PickUpContainer = GameObject.Find("PickUps").transform;
 
-        playerObj = Camera.main.GetComponent<CameraFollow>().target;
+        playerObj = Camera.main.GetComponent<CameraFollow>().target.transform;
     }
 
     private void Update()
     {
-        playerObj = Camera.main.GetComponent<CameraFollow>().target;
+        playerObj = Camera.main.GetComponent<CameraFollow>().target.transform;
 
         if (Heath < 1 && onlyOnce)
         {

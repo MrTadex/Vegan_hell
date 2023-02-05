@@ -39,7 +39,7 @@ public class PickUp : MonoBehaviour
         UnityEditorInternal.ComponentUtility.CopyComponent(oldPlayer.GetComponent<EnemySpawn>());
         Destroy(newPlayer.GetComponent<EnemySpawn>());
         UnityEditorInternal.ComponentUtility.PasteComponentAsNew(newPlayer);
-        Camera.main.GetComponent<CameraFollow>().target = newPlayer.transform;
+        Camera.main.GetComponent<CameraFollow>().target = newPlayer;
         Destroy(oldPlayer);
     }
 }
