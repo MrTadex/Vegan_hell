@@ -19,6 +19,11 @@ public class EnemyAi : MonoBehaviour
     [SerializeField]
     public float runSpeed = 5.0f;
 
+    bool Invicibale = false;
+
+    [SerializeField]
+    float InvicibaleDuration = 1.0f;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -60,12 +65,13 @@ public class EnemyAi : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet" && !Invicibale)
         {
             gameManager.maxEnemyKills++;
             Destroy(collision.gameObject);
             animator.SetTrigger("Damaged");
             Heath--;
+            StartCoroutine(Invincibility());
             SoundManager.PlaySound("Enemy_hit_bullet_attack");
         }
 
@@ -75,11 +81,12 @@ public class EnemyAi : MonoBehaviour
             StartCoroutine(WaitForFunction());
         }
 
-        if (collision.gameObject.tag == "Melee")
+        if (collision.gameObject.tag == "Melee" && !Invicibale)
         {
             gameManager.maxEnemyKills++;
             animator.SetTrigger("Damaged");
             Heath -= 2;
+            StartCoroutine(Invincibility());
             SoundManager.PlaySound("Enemy_hit_root_attack");
         }
 
@@ -87,6 +94,13 @@ public class EnemyAi : MonoBehaviour
         {
             yield return new WaitForSeconds(3);
             chase = true;
+        }
+
+        IEnumerator Invincibility()
+        {
+            Invicibale = true;
+            yield return new WaitForSeconds(InvicibaleDuration);
+            Invicibale = false;
         }
     }
 }
