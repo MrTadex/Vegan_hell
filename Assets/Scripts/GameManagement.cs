@@ -44,7 +44,6 @@ public class GameManagement : MonoBehaviour
     private void Start()
     {
         UpdateGameState(GameState.PauseGame);
-
     }
 
     private void Update()
