@@ -22,6 +22,9 @@ public class GameManagement : MonoBehaviour
     public TextMeshProUGUI KilledEnemies;
 
     [SerializeField]
+    public TextMeshProUGUI currentlyKilledEnemies;
+
+    [SerializeField]
     public TextMeshProUGUI currentTime;
 
     [SerializeField]
@@ -78,6 +81,8 @@ public class GameManagement : MonoBehaviour
                 UpdateGameState(GameState.PlayGame);
             }
         }
+
+        currentlyKilledEnemies.text = maxEnemyKills.ToString();
     }
 
     public void UpdateGameState(GameState newState) {

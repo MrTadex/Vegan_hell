@@ -60,6 +60,7 @@ public class EnemyAi : MonoBehaviour
         {
             onlyOnce = false;
             animator.SetTrigger("Dead");
+
             chase = false;
             if(Random.Range(0, 100) < DropRatio)
             { 
