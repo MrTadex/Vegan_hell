@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip Bullet_shoot, Enemy_attack, Enemy_hit_bullet_attack, Enemy_hit_root_attack, Fire_hit_player, Root_attack;
+    public static AudioClip Bullet_shoot, Enemy_attack, Enemy_hit_bullet_attack, Enemy_hit_root_attack, Fire_hit_player, Root_attack, bad_end_music, battle_music;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
     void Start()
     {
+        //sound effects
         Bullet_shoot = Resources.Load<AudioClip> ("Bullet_shoot");
         Enemy_attack = Resources.Load<AudioClip> ("Enemy_attack");
         Enemy_hit_bullet_attack = Resources.Load<AudioClip> ("Enemy_hit_bullet_attack");
@@ -17,13 +18,32 @@ public class SoundManager : MonoBehaviour
         Fire_hit_player = Resources.Load<AudioClip> ("Fire_hit_player");
         Root_attack = Resources.Load<AudioClip> ("Root_attack");
 
+        //background music
+        battle_music = Resources.Load<AudioClip> ("battle_music");
+        bad_end_music = Resources.Load<AudioClip> ("bad_end_music");
+
         audioSrc = GetComponent<AudioSource> ();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+    }
+
+    public static void PlayBackgroundMusic(string clip) {
+        if (clip == "battle_music") {
+            audioSrc.Stop ();
+            audioSrc.loop = true;
+            audioSrc.clip = battle_music;
+            audioSrc.volume = 1f;
+            audioSrc.Play();
+        } else if (clip == "bad_end_music") {
+            audioSrc.Stop ();
+            audioSrc.loop = true;
+            audioSrc.clip = bad_end_music;
+            audioSrc.volume = 1f;
+            audioSrc.Play();
+        }
     }
 
     public static void PlaySound(string clip) {

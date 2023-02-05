@@ -85,6 +85,7 @@ public class GameManagement : MonoBehaviour
                 Time.timeScale = 0f;
                 break;
             case GameState.GameOver:
+                SoundManager.PlayBackgroundMusic("bad_end_music");
                 GameOver();
                 break;
         }
