@@ -32,18 +32,18 @@ public class Heal : MonoBehaviour
             switch (type)
             {
                 case 0: // Half Heal
-                    gameManager.Health++;
+                    if (gameManager.Health < 6)
+                        gameManager.Health++;
                     collision.gameObject.GetComponent<Animator>().SetTrigger("Half");
                     break;
                 case 1: // Full Heal
-                    gameManager.Health += 2;
+                    if (gameManager.Health < 5)
+                        gameManager.Health += 2;
+                    else if (gameManager.Health < 6)
+                        gameManager.Health++;
                     collision.gameObject.GetComponent<Animator>().SetTrigger("Full");
                     break;
             }
-
-            if (gameManager.Health > 6)
-                gameManager.Health = 6;
-
 
             Destroy(gameObject);
         }

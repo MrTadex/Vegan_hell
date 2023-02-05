@@ -315,7 +315,7 @@ MonoBehaviour:
   offSet: 0
   offSetSpeed: 1
   force: 6
-  setTimer: 0.5
+  setTimer: 0.25
 --- !u!1 &4214956199717326093
 GameObject:
   m_ObjectHideFlags: 0
