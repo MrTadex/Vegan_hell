@@ -14,7 +14,7 @@ public class EnemyAi : MonoBehaviour
     [SerializeField]
     int Heath = 2;
 
-    private GameObject playerObj;
+    Transform playerObj;
 
     [SerializeField]
     public float runSpeed = 5.0f;
@@ -24,6 +24,14 @@ public class EnemyAi : MonoBehaviour
     [SerializeField]
     float InvicibaleDuration = 1.0f;
 
+    [SerializeField]
+    int DropChance = 10;
+
+    [SerializeField]
+    GameObject PickUp;
+
+    bool onlyOnce = true;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -32,17 +40,23 @@ public class EnemyAi : MonoBehaviour
 
         gameManager = FindObjectOfType<GameManagement>();
 
-        // find player by script
-        if (playerObj == null)
-            playerObj = FindObjectOfType<PlayerControler>().gameObject;
+        playerObj = Camera.main.GetComponent<CameraFollow>().target;
     }
 
     private void Update()
     {
-        if (Heath < 1)
+        playerObj = Camera.main.GetComponent<CameraFollow>().target;
+
+        if (Heath < 1 && onlyOnce)
         {
+            onlyOnce = false;
             animator.SetTrigger("Dead");
             chase = false;
+            if(Random.Range(0,100) < DropChance)
+            {
+                Instantiate(PickUp, transform.position, transform.rotation);
+            }
+
             Destroy(gameObject, 1);
         }
     }
@@ -51,7 +65,7 @@ public class EnemyAi : MonoBehaviour
     {
         if (chase)
         {
-            if (playerObj.transform.position.x > transform.position.x)
+            if (playerObj.position.x > transform.position.x)
             {
                 body.transform.localScale = new Vector3(-1, 1, 1);
             }
@@ -60,7 +74,7 @@ public class EnemyAi : MonoBehaviour
                 body.transform.localScale = new Vector3(1, 1, 1);
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, playerObj.transform.position, runSpeed * Time.fixedDeltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, playerObj.position, runSpeed * Time.fixedDeltaTime);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
