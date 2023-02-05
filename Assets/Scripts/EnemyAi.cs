@@ -14,10 +14,23 @@ public class EnemyAi : MonoBehaviour
     [SerializeField]
     int Heath = 2;
 
-    private GameObject playerObj;
+    Transform playerObj;
 
     [SerializeField]
     public float runSpeed = 5.0f;
+
+    bool Invicibale = false;
+
+    [SerializeField]
+    float InvicibaleDuration = 1.0f;
+
+    [SerializeField]
+    int DropChance = 10;
+
+    [SerializeField]
+    GameObject PickUp;
+
+    bool onlyOnce = true;
 
     void Start()
     {
@@ -27,17 +40,23 @@ public class EnemyAi : MonoBehaviour
 
         gameManager = FindObjectOfType<GameManagement>();
 
-        // find player by script
-        if (playerObj == null)
-            playerObj = FindObjectOfType<PlayerControler>().gameObject;
+        playerObj = Camera.main.GetComponent<CameraFollow>().target;
     }
 
     private void Update()
     {
-        if (Heath < 1)
+        playerObj = Camera.main.GetComponent<CameraFollow>().target;
+
+        if (Heath < 1 && onlyOnce)
         {
+            onlyOnce = false;
             animator.SetTrigger("Dead");
             chase = false;
+            if(Random.Range(0,100) < DropChance)
+            {
+                Instantiate(PickUp, transform.position, transform.rotation);
+            }
+
             Destroy(gameObject, 1);
         }
     }
@@ -46,7 +65,7 @@ public class EnemyAi : MonoBehaviour
     {
         if (chase)
         {
-            if (playerObj.transform.position.x > transform.position.x)
+            if (playerObj.position.x > transform.position.x)
             {
                 body.transform.localScale = new Vector3(-1, 1, 1);
             }
@@ -55,17 +74,18 @@ public class EnemyAi : MonoBehaviour
                 body.transform.localScale = new Vector3(1, 1, 1);
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, playerObj.transform.position, runSpeed * Time.fixedDeltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, playerObj.position, runSpeed * Time.fixedDeltaTime);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet" && !Invicibale)
         {
             gameManager.maxEnemyKills++;
             Destroy(collision.gameObject);
             animator.SetTrigger("Damaged");
             Heath--;
+            StartCoroutine(Invincibility());
             SoundManager.PlaySound("Enemy_hit_bullet_attack");
         }
 
@@ -75,11 +95,12 @@ public class EnemyAi : MonoBehaviour
             StartCoroutine(WaitForFunction());
         }
 
-        if (collision.gameObject.tag == "Melee")
+        if (collision.gameObject.tag == "Melee" && !Invicibale)
         {
             gameManager.maxEnemyKills++;
             animator.SetTrigger("Damaged");
             Heath -= 2;
+            StartCoroutine(Invincibility());
             SoundManager.PlaySound("Enemy_hit_root_attack");
         }
 
@@ -87,6 +108,13 @@ public class EnemyAi : MonoBehaviour
         {
             yield return new WaitForSeconds(3);
             chase = true;
+        }
+
+        IEnumerator Invincibility()
+        {
+            Invicibale = true;
+            yield return new WaitForSeconds(InvicibaleDuration);
+            Invicibale = false;
         }
     }
 }

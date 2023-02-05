@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 2430272778323021119}
   - component: {fileID: 2430272778323021116}
   m_Layer: 0
-  m_Name: Sunflower
+  m_Name: Acorn
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +54,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.31}
+  m_Offset: {x: 0, y: -0.03}
   m_Size: {x: 0.48, y: 1.13}
   m_Direction: 0
 --- !u!50 &2430272778323021113
@@ -119,7 +119,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 727639224, guid: 57c57b74e1c43434981a3df6c01f64d5, type: 3}
+  m_Sprite: {fileID: 1803947606, guid: 9b7fa3cb22f0524498380c6d2e42d21c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140,7 +140,7 @@ Animator:
   m_GameObject: {fileID: 2430272778323021108}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ee0ffa702d0f883479fbb5e592436955, type: 2}
+  m_Controller: {fileID: 9100000, guid: b829f42453e22914eb7acc5963dd81bb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7469288746f3a424b95f250181d27d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weapon: {fileID: 2356933419151746975, guid: ac706ef38df85ab4ea5f1446d0a92d17, type: 3}
+  Weapon: {fileID: 2356933419151746975, guid: 22adc197fc69d9c4e8dcfc87a41d0c73, type: 3}
   Mark: {fileID: 2599443754447743936, guid: 6bee6501b5b1b1b49b594b185a8fdafb, type: 3}
 --- !u!114 &2430272778323021116
 MonoBehaviour:
@@ -306,16 +306,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e531ce95925ff4c819dd21c306cf4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 271246408905608829, guid: 1a3f4c0292290fe47a741d420446ad50, type: 3}
-  Bullet: {fileID: 2100258496481941140, guid: 38cc2458f16d7784fbd07ed3ce2d5d28, type: 3}
+  Prefab: {fileID: 271246408905608829, guid: 10206fb1b74d5884e84cac4021755a9f, type: 3}
+  Bullet: {fileID: 2100258496481941140, guid: ded8415d334eab74c9fea4345dc64d3d, type: 3}
   Bullets: {fileID: 0}
   Points: {fileID: 6124160033336862347}
-  numberOfPoints: 6
-  Deg: 90
+  numberOfPoints: 4
+  Deg: 360
   offSet: 0
   offSetSpeed: 1
   force: 6
-  setTimer: 1
+  setTimer: 0.5
 --- !u!1 &4214956199717326093
 GameObject:
   m_ObjectHideFlags: 0

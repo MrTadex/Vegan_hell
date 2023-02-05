@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 75a614263c177464e9bd5b537dc7f3df
+guid: 8d47569b2bcddaa4b9db9b5ef91f03de
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,29 +101,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: acorn_bullet_0
+      name: player_acorn_left_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 30
-        height: 21
+        width: 96
+        height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d052b88d95d5374e85f3771947c1227
-      internalID: 856163193
+      spriteID: 1155eb0e13eed7c49b8e65bcfb8dc416
+      internalID: -1705678530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acorn_bullet_1
+      name: player_acorn_left_1
       rect:
         serializedVersion: 2
-        x: 30
+        x: 96
         y: 0
-        width: 30
-        height: 21
+        width: 96
+        height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb57cdf5edf94fd4f8697e18df338d9e
-      internalID: -866971961
+      spriteID: 38766d950e2c1d2419a827839e578c49
+      internalID: 1521466475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acorn_bullet_2
+      name: player_acorn_left_2
       rect:
         serializedVersion: 2
-        x: 60
+        x: 192
         y: 0
-        width: 30
-        height: 21
+        width: 96
+        height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 712bec216fa7eae4d9a688fe454d4586
-      internalID: 1711705856
+      spriteID: 09f32f8da42629044813d23c42ee2b60
+      internalID: 1910361850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acorn_bullet_3
+      name: player_acorn_left_3
       rect:
         serializedVersion: 2
-        x: 90
+        x: 288
         y: 0
-        width: 30
-        height: 21
+        width: 96
+        height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04549ea5b57d9c44ab7b22aa9d55f14d
-      internalID: -757173640
+      spriteID: c6383e13c6d4f8d4587f0c6cf2663a47
+      internalID: 1485426174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acorn_bullet_4
+      name: player_acorn_left_4
       rect:
         serializedVersion: 2
-        x: 120
+        x: 384
         y: 0
-        width: 30
-        height: 21
+        width: 96
+        height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +203,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd3766991f2a96c43af8136fd5d1ccde
-      internalID: 2049693292
+      spriteID: 2f31a8070686ecb42a2bde4ff4041b21
+      internalID: -91906097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_acorn_left_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aacc6f2f8b524674aa907894078aa852
+      internalID: 1191910376
       vertices: []
       indices: 
       edges: []
@@ -232,11 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      acorn_bullet_1: -866971961
-      acorn_bullet_0: 856163193
-      acorn_bullet_4: 2049693292
-      acorn_bullet_2: 1711705856
-      acorn_bullet_3: -757173640
+      player_acorn_left_5: 1191910376
+      player_acorn_left_4: -91906097
+      player_acorn_left_1: 1521466475
+      player_acorn_left_0: -1705678530
+      player_acorn_left_2: 1910361850
+      player_acorn_left_3: 1485426174
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
