@@ -107,6 +107,9 @@ public class GameManagement : MonoBehaviour
     public void GameOver()
     {
         //Time.timeScale = 0f;
+        foreach (Transform chld in GameObject.Find("Bullets").transform) {
+            Destroy(chld.gameObject);
+        }
         Camera.main.GetComponent<CameraFollow>().target.SetActive(false);
         ClockAlive = false;
         Time.timeScale = 1f;
