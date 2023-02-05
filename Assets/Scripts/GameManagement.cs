@@ -35,6 +35,8 @@ public class GameManagement : MonoBehaviour
 
     public int maxEnemyKills = 0;
     public float Clock = 0;
+
+    [Range(0, 6)]
     public int Health = 6;
 
     void Awake() {
@@ -53,6 +55,9 @@ public class GameManagement : MonoBehaviour
 
         string v = Clock.ToString("F0");
         currentTime.text = v;
+
+        if (Health < 0)
+            Health = 0;
 
         image.sprite = sprites[Health];
 
