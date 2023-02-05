@@ -47,6 +47,7 @@ public class PlayerMele: MonoBehaviour
     private IEnumerator EnableAndDisable()
     {
         obj.GetComponent<BoxCollider2D>().enabled = true;
+        SoundManager.PlaySound("Root_attack");
         yield return new WaitForSeconds(0.5f);
         obj.GetComponent<BoxCollider2D>().enabled = false;
         yield return null;
