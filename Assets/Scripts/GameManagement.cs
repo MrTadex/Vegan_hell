@@ -95,7 +95,8 @@ public class GameManagement : MonoBehaviour
 
     public void GameOver()
     {
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
+        Time.timeScale = 1f;
         KilledEnemies.text = maxEnemyKills.ToString() + " Kills";
         endTime.text = currentTime.text;
     }
