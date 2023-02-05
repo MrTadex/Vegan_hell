@@ -25,10 +25,18 @@ public class EnemyAi : MonoBehaviour
     float InvicibaleDuration = 1.0f;
 
     [SerializeField]
-    int DropChance = 10;
+    int DropChanceClass = 10;
 
     [SerializeField]
-    GameObject PickUp;
+    int DropChanceHealth = 30;
+
+    [SerializeField]
+    int DropRatio = 30;
+
+    [SerializeField]
+    List<GameObject> PickUp = new List<GameObject>();
+
+    Transform PickUpContainer;
 
     bool onlyOnce = true;
 
@@ -39,6 +47,7 @@ public class EnemyAi : MonoBehaviour
         animator = GetComponent<Animator>();
 
         gameManager = FindObjectOfType<GameManagement>();
+        PickUpContainer = GameObject.Find("PickUps").transform;
 
         playerObj = Camera.main.GetComponent<CameraFollow>().target;
     }
@@ -52,9 +61,19 @@ public class EnemyAi : MonoBehaviour
             onlyOnce = false;
             animator.SetTrigger("Dead");
             chase = false;
-            if(Random.Range(0,100) < DropChance)
+            if(Random.Range(0, 100) < DropRatio)
+            { 
+                if(Random.Range(0,100) < DropChanceClass)
+                {
+                    Instantiate(PickUp[0], transform.position, transform.rotation, PickUpContainer);
+                }
+            }
+            else
             {
-                Instantiate(PickUp, transform.position, transform.rotation);
+                if (Random.Range(0, 100) < DropChanceHealth)
+                {
+                    Instantiate(PickUp[1], transform.position, transform.rotation, PickUpContainer);
+                }
             }
 
             Destroy(gameObject, 1);

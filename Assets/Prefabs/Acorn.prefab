@@ -292,8 +292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7469288746f3a424b95f250181d27d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weapon: {fileID: 2356933419151746975, guid: 22adc197fc69d9c4e8dcfc87a41d0c73, type: 3}
-  Mark: {fileID: 2599443754447743936, guid: 6bee6501b5b1b1b49b594b185a8fdafb, type: 3}
+  Weapon: {fileID: 2356933419151746975, guid: c64e1e27fa17a33408ed5d527bd0ab04, type: 3}
+  Mark: {fileID: 2599443754447743936, guid: dc56a5edd7d7739469f46f15d8ae7383, type: 3}
 --- !u!114 &2430272778323021116
 MonoBehaviour:
   m_ObjectHideFlags: 0
