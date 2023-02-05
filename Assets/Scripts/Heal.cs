@@ -44,7 +44,7 @@ public class Heal : MonoBehaviour
                     collision.gameObject.GetComponent<Animator>().SetTrigger("Full");
                     break;
             }
-
+            SoundManager.PlaySound("Heal");
             Destroy(gameObject);
         }
     }

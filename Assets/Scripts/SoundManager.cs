@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip Bullet_shoot, Enemy_attack, Enemy_hit_bullet_attack, Enemy_hit_root_attack, Fire_hit_player, Root_attack, Munching_sound;
+    public static AudioClip Bullet_shoot, Enemy_attack, Enemy_hit_bullet_attack, Enemy_hit_root_attack, Fire_hit_player, Root_attack, Munching_sound, Heal, PowerUp;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -18,7 +18,8 @@ public class SoundManager : MonoBehaviour
         Fire_hit_player = Resources.Load<AudioClip> ("Fire_hit_player");
         Root_attack = Resources.Load<AudioClip> ("Root_attack");
         Munching_sound = Resources.Load<AudioClip> ("Munching_sound");
-
+        Heal = Resources.Load<AudioClip> ("Heal");
+        PowerUp = Resources.Load<AudioClip> ("PowerUp");
         //background music
         // battle_music = Resources.Load<AudioClip> ("battle_music");
         // bad_end_music = Resources.Load<AudioClip> ("bad_end_music");
@@ -69,6 +70,12 @@ public class SoundManager : MonoBehaviour
                 break;
             case "Munching_sound":
                 audioSrc.PlayOneShot (Munching_sound);
+                break;
+            case "Heal":
+                audioSrc.PlayOneShot (Heal);
+                break;
+            case "PowerUp":
+                audioSrc.PlayOneShot (PowerUp);
                 break;
             default:
                 break;
