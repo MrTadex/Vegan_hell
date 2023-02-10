@@ -31,7 +31,7 @@ public class EnemyAi : MonoBehaviour
     int DropChanceHealth = 30;
 
     [SerializeField]
-    int DropRatio = 30;
+    int DropRatio = 10;
 
     [SerializeField]
     List<GameObject> PickUp = new List<GameObject>();
@@ -54,6 +54,11 @@ public class EnemyAi : MonoBehaviour
 
     private void Update()
     {
+        if(!((transform.position.x > -100 && transform.position.x < 100) && (transform.position.y > -100 && transform.position.y < 100)))
+        {
+            Destroy(gameObject);
+        }
+
         playerObj = Camera.main.GetComponent<CameraFollow>().target.transform;
 
         if (Heath < 1 && onlyOnce)
@@ -66,14 +71,16 @@ public class EnemyAi : MonoBehaviour
             { 
                 if(Random.Range(0,100) < DropChanceClass)
                 {
-                    Instantiate(PickUp[0], transform.position, transform.rotation, PickUpContainer);
+                    GameObject PowerUp = Instantiate(PickUp[0], transform.position, transform.rotation, PickUpContainer);
+                    Destroy(PowerUp, 20);
                 }
             }
             else
             {
                 if (Random.Range(0, 100) < DropChanceHealth)
                 {
-                    Instantiate(PickUp[1], transform.position, transform.rotation, PickUpContainer);
+                    GameObject HealUp = Instantiate(PickUp[1], transform.position, transform.rotation, PickUpContainer);
+                    Destroy(HealUp, 20);
                 }
             }
 

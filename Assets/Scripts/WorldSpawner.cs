@@ -55,7 +55,11 @@ public class WorldSpawner : MonoBehaviour
 
                 if(Per > 0.9)
                 {
-                    Instantiate(prefab, new Vector3(CurPoz.x + Random.Range(randomMinRange, randomMaxRange), CurPoz.y + Random.Range(randomMinRange, randomMaxRange), 0.0f), transform.rotation, transform);
+                    float PozX = CurPoz.x + Random.Range(randomMinRange, randomMaxRange);
+                    float PozY = CurPoz.y + Random.Range(randomMinRange, randomMaxRange);
+
+                    if((PozX > - 99 && PozX < 99) && (PozY > -99 && PozY < 99))
+                        Instantiate(prefab, new Vector3(PozX, PozY, 0.0f), transform.rotation, transform);
                 }
                 else
                 {

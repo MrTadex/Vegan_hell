@@ -51,6 +51,7 @@ public class GameManagement : MonoBehaviour
     private void Start()
     {
         UpdateGameState(GameState.PauseGame);
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     private void Update()
@@ -94,6 +95,7 @@ public class GameManagement : MonoBehaviour
                 Time.timeScale = 1f;
                 ClockAlive = true;
                 Camera.main.GetComponent<CameraFollow>().target.SetActive(true);
+                
                 break;
             case GameState.PauseGame:
                 Time.timeScale = 0f;
@@ -111,10 +113,10 @@ public class GameManagement : MonoBehaviour
 
     public void GameOver()
     {
-        //Time.timeScale = 0f;
         foreach (Transform chld in GameObject.Find("Bullets").transform) {
             Destroy(chld.gameObject);
         }
+
         Camera.main.GetComponent<CameraFollow>().target.SetActive(false);
         ClockAlive = false;
         Time.timeScale = 1f;
